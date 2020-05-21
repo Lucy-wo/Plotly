@@ -1,5 +1,5 @@
 
-d3.json("../samples.json").then((data) => {
+d3.json("../data/samples.json").then((data) => {
     function setselection(){
         var button_value=data.names;
         for (var i = 0; i < button_value.length;i++){
@@ -18,7 +18,7 @@ d3.json("../samples.json").then((data) => {
 })
 //Define the buildcharts function to grab data based on condition and generate graphs 
 function buildCharts(sample){
-    d3.json("../samples.json").then((data) => {
+    d3.json("../data/samples.json").then((data) => {
         var name_list=data.samples.map(item=>item.id);
         var filteredData = data.samples.filter(item => {
             return (item.id === sample);
@@ -105,7 +105,7 @@ function gaugePlot(a){
 
 //Define inital function when id==940 for customer experiences
 function initial(){
-    d3.json("../samples.json").then((data) => {
+    d3.json("../data/samples.json").then((data) => {
         var name_list=data.samples.map(item=>item.id);
         var filteredData = data.samples.filter(item => {
             return (item.id == 940);
